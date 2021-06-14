@@ -13,10 +13,13 @@ class LocalEpgPresenter @Inject constructor(private val  epgRepository: LocalEpg
     lateinit var view: EpgView
 
 
+
     override fun onViewCreated(view: EpgView) {
         this.view = view
         refreshDays()
         refreshProgrammes()
+
+
     }
 
     private fun refreshDays() =
