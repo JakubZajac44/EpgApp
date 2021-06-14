@@ -6,12 +6,12 @@ import pl.proexe.junior.model.data.TvProgrammeCategory
 import pl.proexe.junior.model.repository.LocalEpgRepository
 import pl.proexe.junior.model.repository.TimeRepository
 import pl.proexe.junior.view.epg.EpgView
+import javax.inject.Inject
 
-class LocalEpgPresenter : EpgPresenter {
+class LocalEpgPresenter @Inject constructor(private val  epgRepository: LocalEpgRepository, private val  timeRepository: TimeRepository): EpgPresenter {
 
     lateinit var view: EpgView
-    private val epgRepository = LocalEpgRepository()
-    private val timeRepository = TimeRepository()
+
 
     override fun onViewCreated(view: EpgView) {
         this.view = view
@@ -36,6 +36,8 @@ class LocalEpgPresenter : EpgPresenter {
     override fun onDayTileClick(dayTile: DayTile) =
         view.selectDayTile(dayTile)
 
+
+
     override fun onCategoryClick(category: TvProgrammeCategory) =
         view.showEpgList(
             getProgrammes().filter {
@@ -43,6 +45,6 @@ class LocalEpgPresenter : EpgPresenter {
             }
         )
 
-    private fun getProgrammes() =
+     fun getProgrammes() =
         epgRepository.getProgrammesForDateTime(timeRepository.getCurrentTime())
 }

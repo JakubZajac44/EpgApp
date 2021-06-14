@@ -3,6 +3,7 @@
     package="pl.proexe.junior">
 
     <application
+        android:name=".app.EpgApplication"
         android:allowBackup="true"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
