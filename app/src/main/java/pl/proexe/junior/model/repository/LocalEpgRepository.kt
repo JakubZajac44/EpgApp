@@ -3,9 +3,12 @@ package pl.proexe.junior.model.repository
 import pl.proexe.junior.model.data.TvProgramme
 import pl.proexe.junior.model.data.TvProgrammeCategory
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.random.Random
 
-class LocalEpgRepository {
+@Singleton
+class LocalEpgRepository @Inject constructor(){
 
     companion object {
         private const val PROGRAMMES_LIST_SIZE = 10

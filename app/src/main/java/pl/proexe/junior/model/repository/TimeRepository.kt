@@ -3,8 +3,11 @@ package pl.proexe.junior.model.repository
 import pl.proexe.junior.R
 import pl.proexe.junior.model.data.DayTile
 import java.util.*
+import javax.inject.Inject
+import javax.inject.Singleton
 
-class TimeRepository {
+@Singleton
+class TimeRepository @Inject constructor(){
 
     fun getDayTiles() = listOf(
         DayTile(addDaysToCurrentCalendar(-2), R.string.day_before_yesterday),
