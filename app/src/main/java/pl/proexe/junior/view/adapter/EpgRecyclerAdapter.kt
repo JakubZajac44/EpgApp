@@ -42,9 +42,9 @@ class EpgRecyclerAdapter(public var tvProgramme: List<TvProgramme>): RecyclerVie
 
         Glide.with(holder.itemView)
             .load(tvProgramme[position].imageUrl)
-            .centerCrop()
+            .centerInside()
             .override(100,100)
-            .apply(RequestOptions.bitmapTransform(RoundedCorners(50)))
+//            .apply(RequestOptions.bitmapTransform(RoundedCorners(50)))
             .placeholder(R.drawable.ic_broken_image)
             .error(R.drawable.ic_broken_image)
             .fallback(R.drawable.ic_broken_image)

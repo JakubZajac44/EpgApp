@@ -1,8 +1,9 @@
 package pl.proexe.junior.view.epg
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.add
+import androidx.fragment.app.commit
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import pl.proexe.junior.R
@@ -11,11 +12,8 @@ import pl.proexe.junior.model.data.DayTile
 import pl.proexe.junior.model.data.NavigationDrawerModel
 import pl.proexe.junior.model.data.TvProgramme
 import pl.proexe.junior.model.data.TvProgrammeCategory
-import pl.proexe.junior.model.repository.LocalEpgRepository
-import pl.proexe.junior.model.repository.TimeRepository
 import pl.proexe.junior.presenter.epg.EpgPresenter
-import pl.proexe.junior.presenter.epg.LocalEpgPresenter
-import pl.proexe.junior.view.adapter.EpgRecyclerAdapter
+import pl.proexe.junior.view.dailyViewPager.DailyViewPagerFragment
 import javax.inject.Inject
 
 class EpgActivity : AppCompatActivity(), EpgView {
@@ -38,23 +36,26 @@ class EpgActivity : AppCompatActivity(), EpgView {
         setContentView(R.layout.activity_main)
         (application as EpgApplication).component?.inject(this)
 
-        recyclerView = findViewById(R.id.tvProgrammeRecyclerView)
+//        recyclerView = findViewById(R.id.tvProgrammeRecyclerView)
         layoutManager = LinearLayoutManager(this)
-        recyclerView.layoutManager = layoutManager
-
-
-
-
+//        recyclerView.layoutManager = layoutManager
         presenter.onViewCreated(this)
+        if (savedInstanceState == null) {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<DailyViewPagerFragment>(R.id.fragment_container_view)
+            }
+        }
 
-        recyclerView.adapter = EpgRecyclerAdapter(programmeList)
+
+
+
+//        recyclerView.adapter = EpgRecyclerAdapter(programmeList)
     }
 
 
     override fun showEpgList(programmes: List<TvProgramme>) {
-        programmeList.clear()
-        programmeList.addAll(programmes)
-        recyclerView.adapter?.notifyDataSetChanged()
+
     }
 
     override fun showDaysList(days: List<DayTile>) {
