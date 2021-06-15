@@ -32,7 +32,7 @@ class TvProgrammePresenterImpl @Inject constructor(private val  epgRepository: L
 
 
 
-    fun getProgrammes() =
+    private fun getProgrammes() =
         epgRepository.getProgrammesForDateTime(timeRepository.getCurrentTime())
 
 

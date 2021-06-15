@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Disabled
 import org.junit.jupiter.api.Test
-import pl.proexe.junior.model.data.TvProgrammeCategory
+import pl.proexe.junior.model.data.TvProgrammeCategoryEnum
 import pl.proexe.junior.model.repository.LocalEpgRepository
 import java.util.*
 
@@ -63,11 +63,11 @@ class EpgRepositoryTest {
     @Test
     fun `getProgrammeForDay should use all distinct values for categories`() {
         val dateTime = getCurrentDateTime()
-        val amount = TvProgrammeCategory.values().size
+        val amount = TvProgrammeCategoryEnum.values().size
 
         val result = repository.getProgrammesForDateTime(dateTime, amount)
 
-        assertTrue(result.distinctBy { it.category }.size == amount)
+        assertTrue(result.distinctBy { it.categoryEnum }.size == amount)
     }
 
     @Test

@@ -4,9 +4,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:itemBackground">@color/colorRecyclerViewChannelBackground</item>
+        <item name="android:itemTextAppearance">@style/OptionMenuStyle</item>
     </style>
 
-
+    <style name="OptionMenuStyle" parent="@android:style/TextAppearance.Widget.IconMenu.Item">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
 
         <!-- Other themes -->
 

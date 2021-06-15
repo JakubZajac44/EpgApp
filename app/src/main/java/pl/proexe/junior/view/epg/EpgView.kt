@@ -5,7 +5,7 @@ import pl.proexe.junior.model.data.TvProgrammeCategory
 
 interface EpgView {
 
-    fun showCategories(categories: List<TvProgrammeCategory>)
+    fun showCategories(categoryEnums: List<TvProgrammeCategory>)
 
     fun showNavigationDrawer(drawerModel: NavigationDrawerModel)
 
