@@ -1,9 +1,20 @@
 <resources>
-    <string name="app_name">android-junior</string>
+    <string name="app_name">Program TV</string>
     <string name="nav_drawer_main_screen">Strong główna</string>
     <string name="day_before_yesterday">Przedwczoraj</string>
     <string name="yesterday">Wczoraj</string>
     <string name="today">Dzisiaj</string>
     <string name="tomorrow">Jutro</string>
     <string name="day_after_tomorrow">Pojutrze</string>
+    <string name="account_title">Moje konto</string>
+    <string name="account_id">1234500</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="main_page_nav_drawer_title">Strona Główna</string>
+    <string name="tv_programme_nav_drawer_title">Programy TV</string>
+    <string name="channel_nav_drawer_title">Kanały</string>
+    <string name="favourite_nav_drawer_title">Ulubione</string>
+    <string name="recording_nav_drawer_title">Nagrania</string>
 </resources>
