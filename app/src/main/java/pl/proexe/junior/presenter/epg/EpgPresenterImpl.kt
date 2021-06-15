@@ -8,15 +8,18 @@ import pl.proexe.junior.model.repository.TimeRepository
 import pl.proexe.junior.view.epg.EpgView
 import javax.inject.Inject
 
-class LocalEpgPresenter @Inject constructor(private val  epgRepository: LocalEpgRepository, private val  timeRepository: TimeRepository): EpgPresenter {
+class EpgPresenterImpl @Inject constructor(private val  epgRepository: LocalEpgRepository, private val  timeRepository: TimeRepository): EpgPresenter {
 
     lateinit var view: EpgView
+
 
 
     override fun onViewCreated(view: EpgView) {
         this.view = view
         refreshDays()
         refreshProgrammes()
+
+
     }
 
     private fun refreshDays() =
