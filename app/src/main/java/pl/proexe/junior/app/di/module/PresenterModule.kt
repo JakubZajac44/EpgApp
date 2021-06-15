@@ -3,6 +3,7 @@ package pl.proexe.junior.app.di.module
 import dagger.Module
 import dagger.Provides
 import pl.proexe.junior.model.repository.LocalEpgRepository
+import pl.proexe.junior.model.repository.NavigationDrawerRepository
 import pl.proexe.junior.model.repository.TimeRepository
 import pl.proexe.junior.presenter.dailyViewPager.DailyViewPagerPresenter
 import pl.proexe.junior.presenter.dailyViewPager.DailyViewPagerPresenterImpl
@@ -17,7 +18,7 @@ class PresenterModule {
 
     @Provides
     @Singleton
-    fun provideEpgPresenter(epgRepository: LocalEpgRepository,timeRepository: TimeRepository): EpgPresenter = EpgPresenterImpl(epgRepository,timeRepository)
+    fun provideEpgPresenter(epgRepository: LocalEpgRepository,timeRepository: TimeRepository, navigationDrawerRepository: NavigationDrawerRepository): EpgPresenter = EpgPresenterImpl(epgRepository,timeRepository, navigationDrawerRepository)
 
     @Provides
     @Singleton
