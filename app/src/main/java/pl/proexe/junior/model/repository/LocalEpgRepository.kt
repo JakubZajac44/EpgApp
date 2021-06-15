@@ -1,7 +1,7 @@
 package pl.proexe.junior.model.repository
 
 import pl.proexe.junior.model.data.TvProgramme
-import pl.proexe.junior.model.data.TvProgrammeCategory
+import pl.proexe.junior.model.data.TvProgrammeCategoryEnum
 import java.util.*
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -63,7 +63,7 @@ class LocalEpgRepository @Inject constructor(){
                     title = TITLES[index % TITLES.size],
                     imageUrl = IMAGE_URLS[index % IMAGE_URLS.size],
                     type = TYPES[index % TYPES.size],
-                    category = TvProgrammeCategory.values()[index % TvProgrammeCategory.values().size],
+                    categoryEnum = TvProgrammeCategoryEnum.values()[index % TvProgrammeCategoryEnum.values().size],
                     isFavourite = getIsFavouriteBasedOnIndex(index),
                     startTime = startEndTimePair.first,
                     endTime = startEndTimePair.second,

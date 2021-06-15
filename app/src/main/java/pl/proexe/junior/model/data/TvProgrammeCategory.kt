@@ -1,13 +1,7 @@
 package pl.proexe.junior.model.data
 
-enum class TvProgrammeCategory {
-    ALL,
-    KIDS,
-    EDUCATIONAL,
-    MOVIES_AND_SERIES,
-    INFO,
-    MUSIC,
-    GENERAL,
-    SPORT,
-    LIFESTYLE
-}
+data class TvProgrammeCategory (
+    val categoryName: String,
+    val icon: Int
+
+)

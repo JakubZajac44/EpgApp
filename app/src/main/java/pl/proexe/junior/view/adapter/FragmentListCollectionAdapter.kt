@@ -12,8 +12,6 @@ class FragmentListCollectionAdapter(fragment: Fragment, private val itemTabCount
     override fun createFragment(position: Int): Fragment {
         val fragment = TvProgrammeListFragment()
         fragment.arguments = Bundle().apply {
-            // Our object is just an integer :-P
-//            putInt(ARG_OBJECT, position + 1)
         }
         return fragment
     }
